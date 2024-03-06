@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 
 const hostname = 'omegafield.lk';
-const port = 8081; // HTTPS default port
+const port = 80; // HTTPS default port
 
 const app = express();
 app.use(cors());   
