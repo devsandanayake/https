@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 
 const hostname = 'omegafield.lk';
-const port = 8083; // HTTPS default port
+const port = 80; // HTTPS default port
 
 const app = express();
 app.use(cors());   
@@ -25,7 +25,7 @@ const options = {
     cert: fs.readFileSync('cert/server.cert')
 };
 
-// const server = https.createServer(options, app);
+const server = https.createServer(options, app);
 
 app.listen(port,() => {
     console.log(`Server is running on HTTPS protocol at https://${hostname}:${port}`);
