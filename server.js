@@ -4,11 +4,20 @@ const fs = require('fs');
 const cors = require('cors');
 const path = require('path');
 
-const hostname = 'omegafield.lk';
+const hostname = '0.0.0.0'; // Bind to all IP addresses
 const port = 80; // HTTPS default port
 
 const app = express();
-app.use(cors());   
+app.use(cors());
+
+// Add middleware to check Host header
+app.use((req, res, next) => {
+  if (req.headers.host === 'omegafield.lk') {
+    next();
+  } else {
+    res.status(403).send('Unauthorized');
+  }
+});
 
 app.use(express.static(path.join(__dirname, 'tes/build')));
 
