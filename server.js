@@ -25,8 +25,8 @@ const options = {
     cert: fs.readFileSync('cert/server.cert')
 };
 
-const server = https.createServer(options, app);
+// const server = https.createServer(options, app);
 
-server.listen(port, hostname, () => {
+app.listen(port, hostname, () => {
     console.log(`Server is running on HTTPS protocol at https://${hostname}:${port}`);
 });
