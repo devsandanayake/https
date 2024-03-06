@@ -27,6 +27,6 @@ const options = {
 
 // const server = https.createServer(options, app);
 
-app.listen(port, hostname, () => {
+app.listen(port,() => {
     console.log(`Server is running on HTTPS protocol at https://${hostname}:${port}`);
 });
