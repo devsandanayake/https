@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
  
 
-function App() {
+function He() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export default He;

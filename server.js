@@ -11,9 +11,7 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'tes/build')));
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'tes/build', 'index.html'));
-});
+
 
 app.get('/get', (req, res) => {
     res.send('Hello World');
@@ -30,6 +28,10 @@ const options = {
 };
 
 // const server = https.createServer(options, app);
+
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'tes/build', 'index.html'));
+  });
 
 app.listen(port,() => {
     console.log(`Server is running on HTTPS protocol`);
