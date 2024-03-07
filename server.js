@@ -19,6 +19,11 @@ app.get('/get', (req, res) => {
     res.send('Hello World');
 });
 
+app.post('/get/:id', (req, res) => {
+    res.send(`Hello ${req.params.id}`);
+});
+
+
 const options = {
     key: fs.readFileSync('cert/server.key'),
     cert: fs.readFileSync('cert/server.cert')

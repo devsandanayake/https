@@ -12,12 +12,20 @@ function App() {
       })
   }, []);
 
+  const handleClick = (x) => {
+    axios.post(`/get/${x}`)
+      .then(res => {
+        setMessage(res.data);
+      })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         {message}
       </header>
-      <button> <a href='/hello'>dd</a></button>
+
+      <button onClick={() => handleClick('200 hello devin')}>Click me</button> {/* Replace 'someValue' with the value you want to pass */}
     </div>
   );
 }
