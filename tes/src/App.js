@@ -9,7 +9,7 @@
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<He />} />
-            <Route path="/get" element={<Nex />} />
+            <Route path="/gets" element={<Nex />} />
           </Routes>
         </BrowserRouter>
 

@@ -26,7 +26,7 @@ function App() {
       </header>
 
       <button onClick={() => handleClick('200 hello devin')}>Click me</button>
-      <a href="/get">nex</a>
+      <a href="/gets">nex</a>
        {/* Replace 'someValue' with the value you want to pass */}
     </div>
   );
