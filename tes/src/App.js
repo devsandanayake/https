@@ -1,33 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+ import React from 'react'
+ import { BrowserRouter, Routes, Route } from 'react-router-dom';
+ import He from './he'
+ import Nex from './nex'
  
+ export default function App() {
+   return (
+     <div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<He />} />
+            <Route path="/get" element={<Nex />} />
+          </Routes>
+        </BrowserRouter>
 
-function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    axios.get('/get')
-      .then(res => {
-        setMessage(res.data);
-      })
-  }, []);
-
-  const handleClick = (x) => {
-    axios.post(`/get/${x}`)
-      .then(res => {
-        setMessage(res.data);
-      })
-  }
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        {message}
-      </header>
-
-      <button onClick={() => handleClick('200 hello devin')}>Click me</button> {/* Replace 'someValue' with the value you want to pass */}
-    </div>
-  );
-}
-
-export default App;
+     </div>
+   )
+ }
+ 
